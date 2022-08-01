@@ -1,0 +1,17 @@
+/* spinner */
+#spinner{
+    display:none;
+}
+/* notify for search result */
+#notifyError{
+    color:red;
+    font-size:20px;
+    display:none;
+}
+/* cards display */
+#divContainer{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    margin-left:200px;
+   
+}
