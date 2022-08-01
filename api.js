@@ -32,6 +32,7 @@ const displayPhones=phones =>{
     phones?.forEach(phone=>{
         const div=document.createElement('div');
         div.classList.add('col');
+        div.style.width='20rem';
         div.innerHTML=` 
         <div class="card ">
           <img src="${phone.image}" class="card-img-top" alt="...">
@@ -60,11 +61,12 @@ const displayPhoneDetails=Id=>{
     console.log(Id);
         const div=document.createElement('div');
         div.classList.add('card');
+        div.style.width='25rem';
         div.innerHTML=`
         <img src="${Id.image}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${Id.name}</h5>
-          <h3>${Id.releaseDate}</h3>
+          <h3>${Id.releaseDate?  Id.releaseDate:'Result Not Found'}</h3>
           <p class="card-text"><h3>MainFeatures:</h3>
           <h5>Chipset: ${Id.mainFeatures.chipSet}</h5>
           <h5>Display Size: ${Id.mainFeatures.displaySize}</h5>
