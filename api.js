@@ -6,6 +6,7 @@ const toggleSpinner=displayStyle=>{
 // search Phones
 const searchPhones=()=>{
     const searchText=document.getElementById("search-field").value;
+    //case sensitive
     const result=searchText.toLowerCase();
    toggleSpinner('block');
     loadPhones(result);
@@ -61,7 +62,6 @@ const loadPhoneDetails= phoneId=>{
 const displayPhoneDetails=Id=>{
     const container=document.getElementById("detailDiv");
     container.textContent='';
-    console.log(Id);
         const div=document.createElement('div');
         div.classList.add('card');
         div.style.width='25rem';
@@ -69,7 +69,7 @@ const displayPhoneDetails=Id=>{
         <img src="${Id.image}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${Id.name}</h5>
-          <h3>${Id.releaseDate?  Id.releaseDate:'Result Not Found'}</h3>
+          <h3>Release Date: ${Id.releaseDate?  Id.releaseDate:'Result Not Found'}</h3>
           <p class="card-text"><h3>MainFeatures:</h3>
           <h5>Chipset: ${Id.mainFeatures.chipSet}</h5>
           <h5>Display Size: ${Id.mainFeatures.displaySize}</h5>
@@ -84,7 +84,6 @@ const displayPhoneDetails=Id=>{
           <h5>WLAN: ${Id.others?.WLAN? Id.others?.WLAN:'Not found'} </h5>
           </p>
         </div>`
-        console.log(Id.others);
         container.appendChild(div);
     
 
