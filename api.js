@@ -38,10 +38,18 @@ const displayPhones=phones =>{
           <div class="card-body">
             <h5 class="card-title">${phone.phone_name}</h5>
             <p class="card-text">${phone.brand}</p>
+            <button onclick="loadPhoneDetails('${phone.slug}')">Explore</button>
           </div>
         </div>`
         container.appendChild(div);
     })
 
    toggleSpinner('none');
+}
+//loadPhone details
+const loadPhoneDetails= phoneId=>{
+    const url= `https://openapi.programming-hero.com/api/phone/${phoneId}`
+    fetch(url)
+    .then(res=>res.json())
+    .then(data=>console.log(data.data));
 }
