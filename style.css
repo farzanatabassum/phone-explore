@@ -15,7 +15,7 @@ body{
 #divContainer{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    
+    margin-left:100px;
     
 }
 /* media queries for mobile */
@@ -23,7 +23,7 @@ body{
     #divContainer{
         display:grid;
         grid-template-columns:repeat(1,1fr);
-        width:5rem;
+        width:15rem;
     }
     #detailDiv{
         width:20rem;

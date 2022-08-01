@@ -36,6 +36,7 @@ const displayPhones=phones =>{
         document.getElementById('notifyError').style.display='none';
         const div=document.createElement('div');
         div.classList.add('col');
+        div.style.width='20rem';
         div.innerHTML=` 
         <div class="card ">
           <img src="${phone.image}" class="card-img-top" alt="...">
@@ -63,6 +64,7 @@ const displayPhoneDetails=Id=>{
     container.textContent='';
         const div=document.createElement('div');
         div.classList.add('card');
+        div.style.width='18rem';
         div.innerHTML=`
         <img src="${Id.image}" class="card-img-top" alt="...">
         <div class="card-body">
