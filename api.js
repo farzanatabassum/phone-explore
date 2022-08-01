@@ -33,7 +33,7 @@ const displayPhones=phones =>{
         const div=document.createElement('div');
         div.classList.add('col');
         div.innerHTML=` 
-        <div class="card w-100">
+        <div class="card ">
           <img src="${phone.image}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${phone.phone_name}</h5>
@@ -51,5 +51,28 @@ const loadPhoneDetails= phoneId=>{
     const url= `https://openapi.programming-hero.com/api/phone/${phoneId}`
     fetch(url)
     .then(res=>res.json())
-    .then(data=>console.log(data.data));
+    .then(data=>displayPhoneDetails(data.data));
+}
+//displaying phone details in UI
+const displayPhoneDetails=Id=>{
+    const container=document.getElementById("detailDiv");
+    container.textContent='';
+    console.log(Id);
+        const div=document.createElement('div');
+        div.classList.add('card');
+        div.innerHTML=`
+        <img src="${Id.image}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${Id.name}</h5>
+          <h3>${Id.releaseDate}</h3>
+          <p class="card-text"><h3>MainFeatures:</h3>
+          <h5>Chipset: ${Id.mainFeatures.chipSet}</h5>
+          <h5>Display Size: ${Id.mainFeatures.displaySize}</h5>
+          <h5>Memory: ${Id.mainFeatures.memory}</h5>
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>`
+        container.appendChild(div);
+    
+
 }
