@@ -26,7 +26,6 @@ const loadPhones=phone=>{
 const displayPhones=phones =>{
     const container=document.getElementById('divContainer');
     container.textContent='';
-    console.log(phones);
     //error
     if(phones.length==0){
         document.getElementById('notifyError').style.display='block';
@@ -36,7 +35,7 @@ const displayPhones=phones =>{
         document.getElementById('notifyError').style.display='none';
         const div=document.createElement('div');
         div.classList.add('col');
-        div.style.width='20rem';
+        div.style.width='25rem';
         div.innerHTML=` 
         <div class="card ">
           <img src="${phone.image}" class="card-img-top" alt="...">
