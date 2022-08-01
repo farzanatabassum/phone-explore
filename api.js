@@ -71,9 +71,18 @@ const displayPhoneDetails=Id=>{
           <h5>Chipset: ${Id.mainFeatures.chipSet}</h5>
           <h5>Display Size: ${Id.mainFeatures.displaySize}</h5>
           <h5>Memory: ${Id.mainFeatures.memory}</h5>
+          <h5>Sensors:${Id.mainFeatures.sensors}</h5>
+          <h3>Others:</h3>
+          <h5>Bluetooth: ${Id.others?.Bluetooth? Id.others?.Bluetooth:'Not Found' } </h5>
+          <h5>GPS: ${Id.others?.GPS? Id.others?.GPS:'Not Found'} </h5>
+          <h5>NFC: ${Id.others?.NFC? Id.others?.NFC:'Not Found'} </h5>
+          <h5>Radio: ${Id.others?.Radio? Id.others?.Radio:'Not Found'} </h5>
+          <h5>USB: ${Id.others?.USB? Id.others?.USB:'Not Found'} </h5>
+          <h5>WLAN: ${Id.others?.WLAN? Id.others?.WLAN:'Not found'} </h5>
           </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          
         </div>`
+        console.log(Id.others);
         container.appendChild(div);
     
 
