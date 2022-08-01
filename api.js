@@ -1,10 +1,13 @@
-
+//toggle Spinner
+const toggleSpinner=displayStyle=>{
+    document.getElementById("spinner").style.display=displayStyle;
+}
 
 // search Phones
 const searchPhones=()=>{
     const searchText=document.getElementById("search-field").value;
     const result=searchText.toLowerCase();
-   
+   toggleSpinner('block');
     loadPhones(result);
     document.getElementById("search-field").value='';
 
@@ -40,5 +43,5 @@ const displayPhones=phones =>{
         container.appendChild(div);
     })
 
-   
+   toggleSpinner('none');
 }
