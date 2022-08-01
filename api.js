@@ -28,8 +28,12 @@ const displayPhones=phones =>{
     container.textContent='';
     console.log(phones);
     //error
+    if(phones.length==0){
+        document.getElementById('notifyError').style.display='block';
+    }
     //it isnot done showing error
     phones?.forEach(phone=>{
+        document.getElementById('notifyError').style.display='none';
         const div=document.createElement('div');
         div.classList.add('col');
         div.style.width='20rem';
@@ -80,7 +84,6 @@ const displayPhoneDetails=Id=>{
           <h5>USB: ${Id.others?.USB? Id.others?.USB:'Not Found'} </h5>
           <h5>WLAN: ${Id.others?.WLAN? Id.others?.WLAN:'Not found'} </h5>
           </p>
-          
         </div>`
         console.log(Id.others);
         container.appendChild(div);
